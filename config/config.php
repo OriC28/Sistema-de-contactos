@@ -3,9 +3,9 @@
 return [
     "host" => "localhost",
     "port" => 3306,
-    "dbname" => "",
+    "dbname" => "contact_system",
     "username" => "root",
-    "password" => "",
+    "password" => "Ori31525588$$.",
     "charset" => "utf8",
     "options" => [
         PDO::ATTR_EMULATE_PREPARES => FALSE, 
