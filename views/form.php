@@ -12,7 +12,7 @@
         <h1>Contact System</h1>
     </header>
     <main>
-        <!-- CONTAINER DEL FORMULARIO -->
+        <!-- CONTAINER DEL FORMULARIO  -->
         <section class="form-container">
             <h2>Personal Data</h2>
             <!-- FORMULARIO DE DATOS -->
