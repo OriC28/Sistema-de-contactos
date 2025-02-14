@@ -1,0 +1,230 @@
+body{
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+    
+    font-family: poppins, sans-serif;
+    margin: 0;
+    
+}
+header{
+    background-color: #2D8883;
+    h1{
+        margin: 15px 0px 15px 30px;
+        font-size: 40px;
+        color: #fff;
+    }
+}
+main{
+    background-color: #E8F2F4;
+}
+footer{
+    margin-top: 10px;
+    background-color: #2D8883;
+}
+.add-container{
+    background-color: #B3CBCB;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 30px;
+    display: grid;
+    justify-items: center
+
+}
+.button-add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 310px;
+    height: 60px;
+    padding: 5px;
+
+    background-color: #2D8883;
+    border-radius: 25px;
+
+    -webkit-box-shadow: 0px 5px 12px 0px #0000006B;
+    -moz-box-shadow: 0px 5px 12px 0px #0000006B;
+    box-shadow: 0px 5px 12px 0px #0000006B;
+
+    a{
+        color: #fff;
+        font-size: 25px;
+        text-decoration: none;
+        margin-left: 5px;
+        border: none;
+        height: 100%;
+        display: grid;
+        align-items: center;
+    }
+    img{
+        filter: invert(1);
+        margin-right:5px ;
+    }
+}
+.button-add:hover{
+    background-color: #2d8883d4;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    a{
+        color: #fff;
+    }
+
+}
+.search-container{
+    /* background-color: rgb(112, 173, 226); */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 20px;
+    gap: 5px;
+    div, section{
+        margin-right: 15px;
+    }
+}
+.search-bar{
+    background-color: #B3CBCB;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    height: 50px;
+    -webkit-box-shadow: 0px 5px 12px 0px #0000006B;
+    -moz-box-shadow: 0px 5px 12px 0px #0000006B;
+    box-shadow: 0px 5px 12px 0px #0000006B;
+    input{
+        background-color: transparent;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        padding: 10px 15px;
+        height: 100%;
+    }
+    input::placeholder{
+        color: #2D8883;
+    }
+    input::-webkit-search-cancel-button{
+        color: #2D8883;
+        cursor: pointer;
+    }
+}
+#search-icon{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #2D8883;
+    border-radius: 25px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    img{
+        filter: invert(1);
+    }
+}
+#search-icon:hover{
+    background-color: #2d8883d4;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+.filter-bar{
+    background-color: #B3CBCB;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    height: 50px;
+    -webkit-box-shadow: 0px 5px 12px 0px #0000006B;
+    -moz-box-shadow: 0px 5px 12px 0px #0000006B;
+    box-shadow: 0px 5px 12px 0px #0000006B;
+}
+#filter-label{
+    display: flex;
+    align-items: center;
+    background-color: #2D8883;
+    border-radius: 25px;
+    height: 50px;
+    padding: 0px 15px;
+    img{
+        filter: invert(1);
+    }
+    label{
+        color: #fff;
+    }
+}
+.button-filter{
+    background-color: #E8F2F4;
+    border-color: #2D8883;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    color: #2D8883;
+    padding: 5px 10px;
+    height: 30px;
+    
+}
+.button-filter.selected{
+    background-color: #2D8883;
+    border: none;
+    color: #fff;
+    
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+.warning{
+    display: grid;
+    color: red;
+    font-size: 16px;
+    p{
+        margin: 0;
+    }
+}
+.table-container{
+    display: grid;
+    justify-items: center;
+    table{
+        width: 95%;
+        border-spacing: 0;
+        border-radius: 25px; 
+        overflow: hidden;
+    }
+    th, td{
+        text-align: center;
+        padding: 10px;
+    }
+    thead{
+        background-color: #2D8883;
+        color: #fff;
+    }
+    tbody{
+        background-color: #B3CBCB;
+    }
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D8883;
+    border-radius: 25px;
+    margin-top: 10px;
+    gap: 10px;
+    width: 190px;
+    label{
+        color: #fff;
+        
+    }
+    button{
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        img{
+            filter: invert(1);
+        }
+    }
+    bottom:hover{
+        background-color: #277a76;
+        transition: background-color 0.3s;
+    }
+}
