@@ -24,7 +24,7 @@
                         <input name="firstName" type="text">
                         <!-- MENSAJE DE ERROR TIPO WARNING -->
                         <div class="warning">
-                            <p>Field required.</p>
+                            <p> Field required.</p>
                         </div>
                     </div>
                     <div class="input-section">
