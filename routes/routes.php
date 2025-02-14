@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-require_once "Api.php";
+require_once __DIR__.'/../controllers/ClientController.php';
 
 header("Content-Type: application/json");
 
@@ -9,16 +9,16 @@ $path = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
 $searchId = explode('/', $path);
 $id = ($path !== '/') ? end($searchId) : null;
 
-$api = new Api();
-
+$controller = new ClientController();
 switch($method){
     case 'GET':
-        if($path === '/clients'){
-            $api->getAllClients();
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $page = $_GET['page'] ? intval($_GET['page']) : 1;
+            $controller->getClientsPaginate($page);
         }
         if($path === "/clients/$id"){
             if(is_numeric($id)){
-                $api->getClientById($id);
+                $controller->getClientById($id);
             }else{
                 http_response_code(406);
                 echo json_encode(array('error' => 'Id invalid.'));
@@ -26,13 +26,13 @@ switch($method){
         }
         break;
     case 'POST':
-        $api->saveClient();
+        $controller->saveClient();
         break;
     case 'PUT':
-        $api->updateClientById($id);
+        $controller->updateClientById($id);
         break;
     case 'DELETE':
-        $api->deleteClientById($id);
+        $controller->deleteClientById($id);
         break;
     default:
         http_response_code(400);

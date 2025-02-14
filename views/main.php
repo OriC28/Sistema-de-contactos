@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="../assets/css/styles.css?v=<?php echo time(); ?>">
+=======
     <link rel="stylesheet" href="../assets/css/style.css?v=<?php echo time(); ?>">
     
+>>>>>>> 7415dd04a43722834727b14478bb04619f12bb2a
     <title>Contact System</title>
 </head>
 <body>
@@ -54,6 +58,16 @@
                 </script>   
             </section>
             <!-- MENSAJE DE ERROR TIPO WARNING -->
+<<<<<<< HEAD
+            <div class="warning"></div>
+        </section>
+        <!-- CONTAINER TABLA DE CONTACTOS -->
+        <section class="table-container">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+=======
             <div class="warning">
                 <p>Contact not found.</p>
             </div>
@@ -64,6 +78,7 @@
                 
                 <thead>
                     <tr>
+>>>>>>> 7415dd04a43722834727b14478bb04619f12bb2a
                         <th>Names</th>
                         <th>Surnames</th>
                         <th>Company name</th>
@@ -73,6 +88,28 @@
                         <th>Options</th>
                     </tr>
                 </thead>
+<<<<<<< HEAD
+                <!--AQUÍ SE INSERTARÁN LOS DATOS-->
+                <tbody id="tbody"></tbody>
+            </table>
+            <!-- PAGINACIÓN-->
+            <div class="pagination">
+                <button id="prev"><img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/less-than.png" alt="left"/></button>
+                <label id="pageInfo"></label>
+                <button id="next"><img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/more-than.png" alt="right"/></button>
+            </div>
+        </section>
+    </main>
+    <!--FOOTER-->
+    <footer>
+        <p>footer</p>
+    </footer>
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+    <script src="../assets/js/scripts.js"></script>
+=======
                 <tbody>
                     <!-- DATOS INDIVIDUALES DE LOS ESTUDIANTES REGISTRADOS-->
                 <!-- <?php
@@ -108,5 +145,6 @@
     <footer>
         <p>footer</p>
     </footer>
+>>>>>>> 7415dd04a43722834727b14478bb04619f12bb2a
 </body>
 </html>
