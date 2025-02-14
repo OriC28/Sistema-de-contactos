@@ -19,7 +19,6 @@ main{
     background-color: #E8F2F4;
 }
 footer{
-    margin-top: 10px;
     background-color: #2D8883;
 }
 .add-container{
@@ -202,7 +201,6 @@ footer{
     justify-content: space-between;
     background-color: #2D8883;
     border-radius: 25px;
-    margin-top: 10px;
     gap: 10px;
     width: 190px;
     label{
