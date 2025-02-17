@@ -46,7 +46,7 @@ return [
      *
      * @var string
      */
-    "password" => "Ori31525588$$.",
+    "password" => "",
 
     /**
      * The character set used for the database connection.
