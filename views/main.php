@@ -1,48 +1,79 @@
-<!--Esta vista es la página principal que contendrá el listado de contactos-->
+<?php
+/**
+ * Main View
+ *
+ * This file represents the main page of the Contact System. It displays a list of contacts
+ * with options to add new contacts, search, filter, and paginate through the list.
+ * The page includes a table for displaying contact data and interactive elements for
+ * managing the contact list.
+ *
+ * @package    ClientAPI\Views
+ * @author     Genesys Alvardo <gnesyuwu@gmail.com>
+ * @version    1.0.0
+ * @license    MIT
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the external CSS file with a cache-busting query string -->
     <link rel="stylesheet" href="../assets/css/style.css?v=<?php echo time(); ?>">
     <title>Contact System</title>
 </head>
 <body>
+    <!-- Header section -->
     <header>
         <h1>Contact System</h1>
     </header>
-    <main>
-        <!-- CONTAINER DEL BOTÓN ADD -->
-        <section class="add-container">
-            <div class="button-add">
-                <span><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/plus-math.png" alt="add"/></span>
-                <a href="">Add contact</a>
-            </div>
 
+    <!-- Main content section -->
+    <main>
+        <!-- Container for the "Add Contact" button -->
+        <section class="container">
+            <div class="button-add">
+                <span>
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/plus-math.png" alt="add"/>
+                </span>
+                <a href="form.php">Add contact</a>
+            </div>
         </section>
-        <!-- CONTAINER CON LAS BARRAS DE BUSQUEDA Y FILTRO -->
+
+        <!-- Container for search and filter bars -->
         <section class="search-container">
-            <!-- BARRA DE BUSQUEDA -->
+            <!-- Search bar -->
             <div class="search-bar">
-                <input type="search" placeholder="Search...">
+                <input id="input-search" type="search" placeholder="Search...">
                 <button id="search-icon">
-                    <img width="30" height="30" src="https://img.icons8.com/fluency-systems-filled/30/search.png" alt="search"/>
+                    <img width="25" height="25" src="https://img.icons8.com/fluency-systems-filled/30/search.png" alt="search"/>
                 </button>
             </div>
-            <!-- BARRA DE FILTROS -->
+
+            <!-- Filter bar -->
             <section class="filter-bar">
                 <div id="filter-label">
-                    <span><img width="30" height="30" src="https://img.icons8.com/forma-regular/30/filter.png" alt="filter"/></span>
+                    <span>
+                        <img width="25" height="25" src="https://img.icons8.com/forma-regular/30/filter.png" alt="filter"/>
+                    </span>
                     <label for="">Filter by:</label>
                 </div>
-                <!-- CONTAINER DE BOTONES DE FILTRO -->
+
+                <!-- Container for filter buttons -->
                 <div id="filter-buttons-container">
-                    <button class="button-filter" onclick="toggleSelection(this)">Names</button>
-                    <button class="button-filter" onclick="toggleSelection(this)">Email</button>
-                    <button class="button-filter" onclick="toggleSelection(this)">Company</button>
+                    <button id="nameFilter" class="button-filter" onclick="toggleSelection(this)">Names</button>
+                    <button id="rolFilter" class="button-filter" onclick="toggleSelection(this)">Rol</button>
+                    <button id="companyFilter" class="button-filter" onclick="toggleSelection(this)">Company</button>
                 </div>
-                <!-- SCRIPT PARA MANTENER SELECCIONADO LOS BOTONES DE FILTRO -->
+
+                <!-- Script to handle filter button selection -->
                 <script>
+                    /**
+                     * Toggles the selection state of a filter button.
+                     *
+                     * @param {HTMLElement} element The filter button element.
+                     */
                     function toggleSelection(element) {
                         var options = document.querySelectorAll('.button-filter');
                         options.forEach(function(option) {
@@ -50,12 +81,14 @@
                         });
                         element.classList.add('selected');
                     }
-                </script>   
+                </script>
             </section>
-            <!-- MENSAJE DE ERROR TIPO WARNING -->
+
+            <!-- Warning message container -->
             <div class="warning"></div>
         </section>
-        <!-- CONTAINER TABLA DE CONTACTOS -->
+
+        <!-- Container for the contacts table -->
         <section class="table-container">
             <table id="table">
                 <thead>
@@ -70,25 +103,33 @@
                         <th>Options</th>
                     </tr>
                 </thead>
-                <!--AQUÍ SE INSERTARÁN LOS DATOS-->
+                <!-- Table body where contact data will be inserted dynamically -->
                 <tbody id="tbody"></tbody>
             </table>
-            <!-- PAGINACIÓN-->
+
+            <!-- Pagination controls -->
             <div class="pagination">
-                <button id="prev"><img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/less-than.png" alt="left"/></button>
+                <button id="prev">
+                    <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/less-than.png" alt="left"/>
+                </button>
                 <label id="pageInfo"></label>
-                <button id="next"><img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/more-than.png" alt="right"/></button>
+                <button id="next">
+                    <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/more-than.png" alt="right"/>
+                </button>
             </div>
         </section>
     </main>
-    <!--FOOTER-->
+
+    <!-- Footer section -->
     <footer>
-        <p>footer</p>
+        <p></p>
     </footer>
-    <!--SCRIPTS-->
+
+    <!-- Include jQuery library for client-side scripting -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
-    crossorigin="anonymous"></script>
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+            crossorigin="anonymous"></script>
+    <!-- Include custom JavaScript for dynamic functionality -->
     <script src="../assets/js/scripts.js"></script>
 </body>
 </html>

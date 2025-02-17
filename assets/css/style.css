@@ -7,36 +7,47 @@ body{
     margin: 0;
     
 }
+
 header{
     background-color: #2D8883;
     h1{
-        margin: 15px 0px 15px 30px;
-        font-size: 40px;
+        margin: 10px 0px 10px 20px;
+        font-size: 30px;
         color: #fff;
     }
 }
 main{
+    gap: 10px;
     background-color: #E8F2F4;
 }
 footer{
     background-color: #2D8883;
+    p{
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding: 5px;
+    }
 }
-.add-container{
+.container{
     background-color: #B3CBCB;
     border-radius: 25px;
-    margin: 20px;
-    padding: 30px;
+    width: 90%;
+    height: 13%;
+    margin-top: 10px;
     display: grid;
-    justify-items: center
+    justify-self: anchor-center;
+    justify-items: center;
+    align-items: center;
 
 }
 .button-add{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 310px;
-    height: 60px;
-    padding: 5px;
+    width: 210px;
+    height: 45px;
+    
 
     background-color: #2D8883;
     border-radius: 25px;
@@ -47,7 +58,7 @@ footer{
 
     a{
         color: #fff;
-        font-size: 25px;
+        font-size: 18px;
         text-decoration: none;
         margin-left: 5px;
         border: none;
@@ -58,6 +69,12 @@ footer{
     img{
         filter: invert(1);
         margin-right:5px ;
+    }
+    span{
+        width: 30px;
+        height: 30px;
+        display: grid;
+        justify-items: center;
     }
 }
 .button-add:hover{
@@ -70,12 +87,11 @@ footer{
 
 }
 .search-container{
-    /* background-color: rgb(112, 173, 226); */
     display: flex;
     align-items: center;
-    padding: 10px;
-    margin: 20px;
-    gap: 5px;
+    justify-self: anchor-center;
+    width: 90%;
+    padding: 15px 0px;
     div, section{
         margin-right: 15px;
     }
@@ -85,7 +101,7 @@ footer{
     display: flex;
     align-items: center;
     border-radius: 25px;
-    height: 50px;
+    height: 40px;
     -webkit-box-shadow: 0px 5px 12px 0px #0000006B;
     -moz-box-shadow: 0px 5px 12px 0px #0000006B;
     box-shadow: 0px 5px 12px 0px #0000006B;
@@ -112,8 +128,8 @@ footer{
     background-color: #2D8883;
     border-radius: 25px;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     img{
         filter: invert(1);
     }
@@ -128,7 +144,7 @@ footer{
     display: flex;
     align-items: center;
     border-radius: 25px;
-    height: 50px;
+    height: 40px;
     -webkit-box-shadow: 0px 5px 12px 0px #0000006B;
     -moz-box-shadow: 0px 5px 12px 0px #0000006B;
     box-shadow: 0px 5px 12px 0px #0000006B;
@@ -138,8 +154,13 @@ footer{
     align-items: center;
     background-color: #2D8883;
     border-radius: 25px;
-    height: 50px;
-    padding: 0px 15px;
+    height: 40px;
+    padding: 0px 12px;
+    gap: 5px;
+    span{
+        display: grid; 
+        justify-items: center;
+    }
     img{
         filter: invert(1);
     }
@@ -169,23 +190,26 @@ footer{
 .warning{
     display: grid;
     color: red;
-    font-size: 16px;
+    font-size: 25px;
     p{
-        margin: 0;
+        margin-right: 0;
     }
 }
 .table-container{
     display: grid;
     justify-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
     table{
-        width: 95%;
+        width: 90%;
         border-spacing: 0;
         border-radius: 25px; 
         overflow: hidden;
     }
     th, td{
         text-align: center;
-        padding: 10px;
+        padding: 3px;
     }
     thead{
         background-color: #2D8883;
@@ -195,14 +219,18 @@ footer{
         background-color: #B3CBCB;
     }
 }
+
 .pagination{
     display: flex;
     align-items: center;
+    justify-self: right;
+    margin-right: 66px;
     justify-content: space-between;
     background-color: #2D8883;
     border-radius: 25px;
     gap: 10px;
-    width: 190px;
+    width: 180px;
+
     label{
         color: #fff;
         
@@ -226,3 +254,122 @@ footer{
         transition: background-color 0.3s;
     }
 }
+.edit-button{
+    background-color: #B3CBCB;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #277a76;
+    border-width: 1.5px;
+    font-weight: 600;
+    font-size: 13.5px;
+    cursor: pointer;
+    height: 30px;
+    width: 64px;
+    cursor: pointer;
+    color: #277a76;
+}
+.edit-button:hover{
+    background-color: #277a76;
+    transition: background-color 0.5s;
+    color: #fff;
+    
+}
+.delete-button{
+    background-color: #B3CBCB;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #D23B3B;
+    border-width: 1.5px;
+   /*  padding: 13px 20px; */
+    height: 30px;
+    width: 64px;
+    color: #D23B3B;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13.5px;
+    cursor: pointer;
+}
+.delete-button:hover{
+    background-color: #D23B3B;
+    transition: background-color 0.5s;
+    
+    color: #fff;
+    
+}
+/*  ESTILO DEL FORMULARIO */
+.container-form{
+    background-color: #B3CBCB;
+    border-radius: 25px;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: grid;
+    justify-self: anchor-center;
+    justify-items: stretch;
+    position: relative;
+    form{
+        display: grid;
+    }
+
+}
+.form-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    h3{
+        margin: 5px 0px;	
+    }
+}
+.data-container{
+    display: grid;
+
+    
+}
+.input{
+    display: grid;
+    background-color: #E8F2F4;
+    border: none;
+    justify-items: center;
+    border-radius: 25px;
+    height: 30px;
+    width: 145px;
+}
+.input-section{
+    display: grid;
+    background-color: transparent;
+    input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        height: 30px;
+        width: 135px;
+    }
+    label{
+        font-size: 13px;
+        margin: 5px 10px;
+    }
+    p{
+        font-size: 11px;
+        margin: 3px 5px;
+    }
+}
+
+.button-save{
+    justify-self: center;
+    background-color: #2D8883;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.button-save:hover{
+    background-color: #31948fd4;
+    transition: background-color 0.5s;
+}
+
