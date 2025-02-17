@@ -8,7 +8,7 @@
  * jQuery for client-side interactions.
  *
  * @package    ClientAPI\Views
- * @author     Genesys Alvardo <gnesyuwu@gmail.com>
+ * @author     Genesys Alvarado <gnesyuwu@gmail.com>
  * @version    1.0.0
  * @license    MIT
  */
