@@ -9,7 +9,7 @@ $(document).ready(function()
     function loadPage(page)
     {
         $.ajax({
-            url: `http://localhost/Sistema de contactos/routes/routes.php?page=${page}`,
+            url: `../routes/routes.php?page=${page}`,
             type: 'GET',
             dataType: 'json',
             success: function(response)
@@ -83,7 +83,7 @@ $(document).ready(function()
             event.preventDefault();
             let element = $(this).closest('tr');
             let id = $(element).find('td').first().text();
-            let url = `http://localhost/Sistema de contactos/routes/routes.php/clients/${id}`;
+            let url = `../routes/routes.php/clients/${id}`;
             $.ajax({
                 url: url,
                 type: 'DELETE',
@@ -103,7 +103,7 @@ $(document).ready(function()
     $(document).on('click', '.edit-button', function(event)
     {   // Get client's id
         let id = $(this).data('client-id'); 
-        window.location.href = `http://localhost/Sistema de contactos/views/form.php?id=${id}`;
+        window.location.href = `../views/form.php?id=${id}`;
     });
     // Check if the client will add or update data
     $('#client-form').submit(function(e) {
@@ -122,13 +122,13 @@ $(document).ready(function()
         const clientId = $('#clientId').val();
     
         if (clientId) {
-            urlBack = "http://localhost/Sistema de contactos/views/main.php";
+            urlBack = "../views/main.php";
             // Edition mode
-            url = `http://localhost/Sistema de contactos/routes/routes.php/clients/${clientId}`;
+            url = `../routes/routes.php/clients/${clientId}`;
             method = 'PUT';
         } else {
             // Creation mode
-            url = `http://localhost/Sistema de contactos/routes/routes.php/clients`;
+            url = `../routes/routes.php/clients`;
             method = 'POST';
         }
         $.ajax({

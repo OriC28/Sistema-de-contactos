@@ -22,55 +22,6 @@ class Connection
     protected $conn;
 
     /**
-     * The database host.
-     *
-     * @var string
-     */
-    private $host;
-
-    /**
-     * The database port.
-     *
-     * @var int
-     */
-    private $port;
-
-    /**
-     * The database name.
-     *
-     * @var string
-     */
-    private $dbname;
-
-    /**
-     * The database username.
-     *
-     * @var string
-     */
-    private $username;
-
-    /**
-     * The database password.
-     *
-     * @var string
-     */
-    private $password;
-
-    /**
-     * The character set for the database connection.
-     *
-     * @var string
-     */
-    private $charset;
-
-    /**
-     * The PDO options for the database connection.
-     *
-     * @var array
-     */
-    private $options;
-
-    /**
      * Connection constructor.
      *
      * Initializes the connection parameters by loading the configuration file
@@ -80,17 +31,11 @@ class Connection
      */
     public function __construct()
     {
-        $config = require_once "../config/config.php";
-        $this->validateParametersConfig($config);
+        // Commented out MySQL config loading that prevents SQLite from working
+        // $config = require_once "../config/config.php";
+        // $this->validateParametersConfig($config);
 
         $this->conn = null;
-        $this->host = $config["host"];
-        $this->port = $config["port"];
-        $this->dbname = $config["dbname"];
-        $this->username = $config["username"];
-        $this->password = $config["password"];
-        $this->charset = $config["charset"];
-        $this->options = $config["options"];
     }
 
     /**
@@ -125,8 +70,9 @@ class Connection
     {
         try {
             if (is_null($this->conn)) {
-                $dsn = "mysql:dbname=$this->dbname;host=$this->host;port=$this->port;charset=$this->charset;";
-                $this->conn = new PDO($dsn, $this->username, $this->password, $this->options);
+                $dbPath = __DIR__ . '/../database/database.db';
+                $this->conn = new PDO("sqlite:" . $dbPath);
+                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
         } catch (PDOException $e) {
             throw new Exception("Error: " . $e->getMessage(), 1);

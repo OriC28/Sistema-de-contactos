@@ -8,7 +8,7 @@ $(document).ready(function() {
     {
         // Set a request to API to get client's data
         $.ajax({
-            url: `http://localhost/Sistema de contactos/routes/routes.php/clients/${clientId}`,
+            url: `../routes/routes.php/clients/${clientId}`,
             type: 'GET',
             success: function(client)
             {
